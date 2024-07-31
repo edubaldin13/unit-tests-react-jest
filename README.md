@@ -11,6 +11,23 @@ To run all tests
 To run all tests with coverage
 - 'npm test -- --coverage'
 
+## HOW TO TEST API CALLS?
+
+Test integration from api's using a real api endpoint is not the best practice for a unit test purpose, that's why Mock Service Worker
+[text](https://mswjs.io/docs/getting-started)
+
+Install 
+- 'npm install msw@latest --save-dev'
+
+### INTERCEPTING REQUESTS
+[text](https://mswjs.io/docs/basics/intercepting-requests)
+
+To avoid api data change on tests we call 'server.close()'
+
+with we need to keep a request with some data as call more than one calls on tests we can just not call 'server.close()'
+
+With we do not want to set the 'server.close' or 'server.resetHandlers()' for every single test we can use the 'beforeAll(server.listen())', 'afterEach(server.resetHandlers())', 'afterAll(server.close())' all this 
+being set up on the server definition file
 # PROBLEMS THAT COULD HAPPEN
 if the npm test is showing the error:
 

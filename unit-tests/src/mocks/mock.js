@@ -1,4 +1,4 @@
-export const ItemMock =[
+export const UserMock =[
         {
             name : "eduardo bertoli",
             age: 20,
