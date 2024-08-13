@@ -14,20 +14,20 @@ To run all tests with coverage
 ## HOW TO TEST API CALLS?
 
 Test integration from api's using a real api endpoint is not the best practice for a unit test purpose, that's why Mock Service Worker
-[text](https://mswjs.io/docs/getting-started)
+[MSW DOC](https://mswjs.io/docs/getting-started)
 
 Install 
 - 'npm install msw@latest --save-dev'
 
 ### INTERCEPTING REQUESTS
-[text](https://mswjs.io/docs/basics/intercepting-requests)
+[MSW DOC - INTERCEPTING REQUESTS](https://mswjs.io/docs/basics/intercepting-requests)
 
 To avoid api data change on tests we call 'server.close()'
 
 with we need to keep a request with some data as call more than one calls on tests we can just not call 'server.close()'
 
 With we do not want to set the 'server.close' or 'server.resetHandlers()' for every single test we can use the 'beforeAll(server.listen())', 'afterEach(server.resetHandlers())', 'afterAll(server.close())' all this 
-being set up on the server definition file
+can be set up on the server definition file as it can be defined in the test file as well.
 # PROBLEMS THAT COULD HAPPEN
 if the npm test is showing the error:
 
@@ -37,3 +37,5 @@ just type on terminal:
 'npm install --save-dev @testing-library/react'
 
 -- find a extension that shows each line that was tested
+
+[JEST QUICK COVERAGE](https://marketplace.visualstudio.com/items?itemName=RukshanDias.jest-coverage)
